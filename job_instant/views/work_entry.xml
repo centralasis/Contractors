@@ -31,7 +31,7 @@
                                     <field name="name"/>
                                     <field name="sequence"/>
                                     <field name="amount"/>
-                                    <field name="contract_id" invisible="1"/>
+                                    <field name="contract_id"/>
                                 </group>
                             </form>
                     </field>     
