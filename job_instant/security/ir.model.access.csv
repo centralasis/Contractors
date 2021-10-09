@@ -1,2 +1,2 @@
-﻿id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hr_work_entry_input_instant,work.entry.input,model_work_entry_input,hr_payroll.group_hr_payroll_user,1,1,1,1
