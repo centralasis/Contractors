@@ -16,7 +16,7 @@
                 ],
     'data' : [
         'views/work_entry.xml',
-        'security/ir.model.access',
+        'security/ir.model.access.csv',
     ],
 
     'installable': True,
