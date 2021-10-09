@@ -20,7 +20,7 @@
                             <field name="input_type_id"/>
                             <field name="name"/>
                             <field name="amount"/>
-                            <field name="contract_id"/>
+                            <field name="contract_id" invisible="True"/>
                             <field name="sequence" invisible="True"/>
                         </tree>
                             <form string="Work Entry Line">
