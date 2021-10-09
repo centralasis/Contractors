@@ -15,8 +15,9 @@
     'depends': ['base', 'hr_payroll'
                 ],
     'data' : [
-        'views/work_entry.xml',
         'security/ir.model.access.csv',
+        'views/work_entry.xml',
+        
     ],
 
     'installable': True,
