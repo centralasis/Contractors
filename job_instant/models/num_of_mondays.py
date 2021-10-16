@@ -13,7 +13,7 @@ from odoo.tools.safe_eval import safe_eval
 class HrPayslip(models.Model):
   _inherit = "hr.payslip"
   
-  mondays_in_month = fields.Integer(required=True, compute='_mondays_in_month', store=True, readonly=False)
+  mondays_in_month = fields.Integer(compute='_mondays_in_month', store=True, readonly=False)
   
   def _mondays_in_month(self):
     
