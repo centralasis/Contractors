@@ -12,7 +12,10 @@ from odoo.tools.safe_eval import safe_eval
 
 class HrPayslip(models.Model):
   _inherit = "hr.payslip"
-  def mondays_in_month(self):
+  
+  mondays_in_month = fields.integer(required=True, compute='_mondays_in_month', store=True, readonly=False)
+  
+  def _mondays_in_month(self):
     
     for payslip1 in self:
       count1 = 0
@@ -21,3 +24,5 @@ class HrPayslip(models.Model):
         d = date.fromordinal(d_ord)
         if (d.weekday() == 0):
           count1 += 1
+     
+    payslip1.mondays_in_month = count1
