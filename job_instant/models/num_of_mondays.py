@@ -11,18 +11,19 @@ from odoo.tools.misc import format_date
 from odoo.tools.safe_eval import safe_eval
 
 class HrPayslip(models.Model):
-  _inherit = "hr.payslip"
+   
+    _inherit = "hr.payslip"
   
-  mondays_in_month = fields.Integer(compute='_mondays_in_month', store=True, readonly=False)
+    mondays_in_month = fields.Integer(compute='_mondays_in_month', store=True, readonly=False)
   
-  def _mondays_in_month(self):
+    def _mondays_in_month(self):
     
-    for payslip1 in self:
-      count1 = 0
+        for payslip1 in self:
+        count1 = 0
       
-      for d_ord in range(payslip1.date_from.toordinal(), payslip1.date_to.toordinal()+1):
-        d = date.fromordinal(d_ord)
-        if (d.weekday() == 0):
-          count1 += 1
+            for d_ord in range(payslip1.date_from.toordinal(), payslip1.date_to.toordinal()+1):
+            d = date.fromordinal(d_ord)
+            if (d.weekday() == 0):
+            count1 += 1
      
-    payslip1.mondays_in_month = count1
+        payslip1.mondays_in_month = count1
