@@ -16,14 +16,15 @@ class HrPayslip(models.Model):
   
     mondays_in_month = fields.Integer(compute='_mondays_in_month', store=True, readonly=False)
   
+    @api.depends('date_from', 'date_to')
     def _mondays_in_month(self):
     
         for payslip1 in self:
-        count1 = 0
+            count1 = 0
       
             for d_ord in range(payslip1.date_from.toordinal(), payslip1.date_to.toordinal()+1):
-            d = date.fromordinal(d_ord)
-            if (d.weekday() == 0):
-            count1 += 1
-     
+                d = date.fromordinal(d_ord)
+                if (d.weekday() == 0):
+                    count1 += 1
+
         payslip1.mondays_in_month = count1
